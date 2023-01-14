@@ -1,4 +1,5 @@
 const express = require("express");
+require("dotenv").config();
 const app = express();
 const http = require("http");
 const WebSocket = require("ws");
@@ -37,7 +38,6 @@ app.get("/posts", (req, res) => {
     }
 });
 
-const port = process.env.PORT || 8080
-server.listen(port, () => {
-    console.log(`Server running on port ${port}`);
+server.listen(process.env.PORT || 3000, ()=>{
+    console.log('Listen to the port 3000');
 });
