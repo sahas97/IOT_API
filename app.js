@@ -28,7 +28,13 @@ app.get("/", (req, res) => {
 });
 
 app.get("/posts", (req, res) => {
-    res.send("Hello from Posts");
+    try {
+        res.json({
+            "message": 'Hello from the sever',
+        })
+    } catch (err) {
+        res.json({ message: err });
+    }
 });
 
 const port = process.env.PORT || 8080
